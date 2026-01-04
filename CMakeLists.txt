@@ -21,8 +21,8 @@
 ########################################################################
 # Project setup
 ########################################################################
-#cmake_minimum_required(VERSION 2.6...3.19)
-cmake_minimum_required(VERSION 4.2)
+cmake_minimum_required(VERSION 2.6...3.19)
+#cmake_minimum_required(VERSION 4.2)
 project(rtlsdr C)
 
 # quite old cmake version - probably for compatibility with old OS versions?
