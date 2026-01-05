@@ -16,7 +16,7 @@
 # along with GNU Radio; see the file COPYING.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
-
+cmake_minimum_required(VERSION 2.6...3.19)
 MACRO(RTLSDR_APPEND_SRCS)
     LIST(APPEND rtlsdr_srcs ${ARGV})
 ENDMACRO(RTLSDR_APPEND_SRCS)
