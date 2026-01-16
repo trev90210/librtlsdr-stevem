@@ -22,19 +22,21 @@ if /bin/true; then
   cd ${REPO_DIR} && git clone --branch v1.0.23 https://github.com/libusb/libusb.git libusb_${WN}
   echo -e "\n\n********************************************************"
   echo "start build of libusb_${WN}"
-  cd ${REPO_DIR}/libusb_${WN} && ./bootstrap.sh && \
-    CC=${CROSS}-gcc \
+  cd ${REPO_DIR}/libusb_${WN}
+  ./bootstrap.sh
+  CC=${CROSS}-gcc \
     AR=${CROSS}-ar \
     RANLIB=${CROSS}-ranlib \
-    ./configure --prefix=${REPO_DIR}/mingw_libusb_${WN} --host=${CROSS} --disable-shared && \
-    make && make install
-    echo -e "\n\nlisting of ${REPO_DIR}/mingw_libusb_${WN}"
-    ls -alh ${REPO_DIR}/mingw_libusb_${WN}
-    echo -e "\nlisting of ${REPO_DIR}/mingw_libusb_${WN}/include"
-    ls -alh ${REPO_DIR}/mingw_libusb_${WN}/include
-    echo -e "\nlisting of ${REPO_DIR}/mingw_libusb_${WN}/lib"
-    ls -alh ${REPO_DIR}/mingw_libusb_${WN}/lib
-    echo -e "\n"
+    ./configure --prefix=${REPO_DIR}/mingw_libusb_${WN} --host=${CROSS} --disable-shared 
+  make 
+  make install
+  echo -e "\n\nlisting of ${REPO_DIR}/mingw_libusb_${WN}"
+  ls -alh ${REPO_DIR}/mingw_libusb_${WN}
+  echo -e "\nlisting of ${REPO_DIR}/mingw_libusb_${WN}/include"
+  ls -alh ${REPO_DIR}/mingw_libusb_${WN}/include
+  echo -e "\nlisting of ${REPO_DIR}/mingw_libusb_${WN}/lib"
+  ls -alh ${REPO_DIR}/mingw_libusb_${WN}/lib
+  echo -e "\n"
 fi
 
 # librtlsdr
