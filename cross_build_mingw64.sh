@@ -40,7 +40,3 @@ if /bin/true; then
   ls -alh ${REPO_DIR}/mingw_libusb_${WN}/include/libusb-1.0
   echo -e "\n"
 fi
-
-
-
-
