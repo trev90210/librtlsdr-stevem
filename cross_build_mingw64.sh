@@ -36,6 +36,8 @@ if /bin/true; then
   ls -alh ${REPO_DIR}/mingw_libusb_${WN}/include
   echo -e "\nlisting of ${REPO_DIR}/mingw_libusb_${WN}/lib"
   ls -alh ${REPO_DIR}/mingw_libusb_${WN}/lib
+  echo -e "\nlisting of ${REPO_DIR}/mingw_libusb_${WN}/include/libusb-1.0"
+  ls -alh ${REPO_DIR}/mingw_libusb_${WN}/include/libusb-1.0
   echo -e "\n"
 fi
 
@@ -49,9 +51,10 @@ if /bin/true; then
       -DCMAKE_INSTALL_PREFIX=${REPO_DIR}/rtlsdr-bin-${WN}_${ZIP_POST} \
       -DRTL_STATIC_BUILD=ON "$@"  \
       -DLIBUSB_INCLUDE_DIR=${REPO_DIR}/mingw_libusb_${WN}/include/libusb-1.0 \
-      -DLIBUSB_LIBRARIES=${REPO_DIR}/mingw_libusb_${WN}/lib/libusb-1.0.a \
+      -DLIBUSB_LIBRARIES=${REPO_DIR}/mingw_libusb_${WN}/lib \
       ../  && \
     make && make install
   md5sum  ${REPO_DIR}/rtlsdr-bin-${WN}_${ZIP_POST}/bin/* >${REPO_DIR}/rtlsdr-bin-${WN}_${ZIP_POST}/bin/md5sums.txt
   sha1sum ${REPO_DIR}/rtlsdr-bin-${WN}_${ZIP_POST}/bin/* >${REPO_DIR}/rtlsdr-bin-${WN}_${ZIP_POST}/bin/sha1sums.txt
 fi
+
